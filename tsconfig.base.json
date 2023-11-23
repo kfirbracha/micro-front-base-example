@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-monorepo/library": ["libs/src/index.ts"],
       "achia/Routes": ["apps/achia/src/app/remote-entry/entry.routes.ts"],
       "kfir/Routes": ["apps/kfir/src/app/remote-entry/entry.routes.ts"]
     }
