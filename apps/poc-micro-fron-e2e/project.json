@@ -1,0 +1,33 @@
+{
+  "name": "poc-micro-fron-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/poc-micro-fron-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/poc-micro-fron-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "poc-micro-fron:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "poc-micro-fron:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "poc-micro-fron:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/poc-micro-fron-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["poc-micro-fron"]
+}
