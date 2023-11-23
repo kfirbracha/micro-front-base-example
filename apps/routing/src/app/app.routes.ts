@@ -3,6 +3,10 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
+    path: 'oren',
+    loadChildren: () => import('oren/Module').then((m) => m.RemoteEntryModule),
+  },
+  {
     path: 'kfir',
     loadChildren: () => import('kfir/Routes').then((m) => m.remoteRoutes),
   },
